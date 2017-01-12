@@ -26,12 +26,6 @@ title: Schedule
 <div style="margin-bottom: 10px" class="container">
   <h1>Schedule</h1>
 
-
-  <!-- ############### CHANGE ME!!!  ####################################################### -->
-  Update to include class Google Calendar ID and remove this note.
-  <!-- ############### CHANGE ME!!!  ####################################################### -->
-
-
   <div id='calendar'></div>
 </div>
 <script>
@@ -47,10 +41,8 @@ title: Schedule
                 textColor: 'black'
             },
             {
-// ################### CHANGE ME!!!  ####################################################### -->
                 // Course Specific Calendar
-                googleCalendarId: 'change-me@group.calendar.google.com'
-// ################### CHANGE ME!!!  ####################################################### -->
+                googleCalendarId: '{{ site.googleCalendarId }}'
             }
         ]
     });
