@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title> Schedule | CCIS2591 Spring 2017 </title>
+  <title> Install NodeJS | CCIS2591 Spring 2017 </title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="utf-8">
 
@@ -90,51 +90,27 @@
 </div>
 
 
-
 <div class="breadcrumb-bar">
   <div class="container">
     <ol class="breadcrumb">
       
       <li><a href="/spring-2017/">Home</a></li>
-      <li class="active">Schedule</li>
+      <li><a href="/spring-2017/modules">Modules</a></li>
+      <li><a href="/spring-2017/modules/intro">Getting Started</a></li>
+      <li class="active">Install NodeJS</li>
     </ol>
   </div>
 </div>
 
-<!-- Load FullCalendar for schedule page. -->
-<!-- Documentation available at: http://fullcalendar.io/ -->
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.3.1/fullcalendar.css">
-<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.3/moment.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.3.1/fullcalendar.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.3.1/gcal.js"></script>
 
+<div class="container">
+  <h1 id="install-nodejs">Install NodeJS</h1>
+<p>We’ll use npm (node package manager) to get JavaScript related tools and libraries.  It is a part of NodeJS which is becoming a ubiquitous tool in the JavaScript developers world.  While we’ll mainly use npm, NodeJS also allows development and testing of back-end JavaScript code.</p>
 
-<div style="margin-bottom: 10px" class="container">
-  <h1>Schedule</h1>
+<h2 id="install">Install</h2>
+<p>If you have not already done so, download <a href="https://nodejs.org/en/download/">NodeJS</a> website.  Once you have completed the download, run the installer.</p>
 
-  <div id='calendar'></div>
 </div>
-<script>
-  $(document).ready(function() {
-    $('#calendar').fullCalendar({
-        googleCalendarApiKey: 'AIzaSyBp2EuIzOmDJHiLpU3jWamZ_u5D_ZFw2KI',
-        eventColor: '#446e9b',
-        eventSources: [
-            {
-                // My HTC Events Calendar
-                googleCalendarId: 'pam2qc7v8m3eqordq9llu4b844@group.calendar.google.com',
-                color: '#f26522',  // HTC Orange for college dates & events
-                textColor: 'black'
-            },
-            {
-                // Course Specific Calendar
-                googleCalendarId: '8ta90ll5ku4okc52ag8o1t0e9g@group.calendar.google.com'
-            }
-        ]
-    });
-});
-</script>
-
 
 
 

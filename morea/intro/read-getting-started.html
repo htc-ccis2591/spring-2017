@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Getting Started | CCIS2591 Spring 2017 </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+
+  <!--  Load bootswatch-based Morea theme file. -->
+  <link rel="stylesheet" href="/spring-2017/css/themes/spacelab/bootstrap.min.css">
+  <link rel="stylesheet" href="/spring-2017/css/style.css">
+  <link rel="stylesheet" href="/spring-2017/css/syntax.css">
+  <link rel="shortcut icon" href="/spring-2017/favicon.ico" type="image/x-icon"/>
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.2/html5shiv.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.2.0/respond.js"></script>
+  <![endif]-->
+
+  <!-- Load Bootstrap JavaScript components -->
+  <script src="//code.jquery.com/jquery.min.js"></script>
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+
+  
+  <script type="text/javascript"
+          src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+  
+  <script>
+    (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+          }, i[r].l = 1 * new Date();
+      a = s.createElement(o),
+          m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-63189236-4', 'auto');
+    ga('send', 'pageview');
+
+  </script>
+  
+
+  <script>
+    $(window).load(function () {
+      // If on a page associated with a navbar item, make its navbar item 'active'.
+      $('.navbar-nav').find('a[href="' + location.pathname + '"]').parents('li').addClass('active');
+    });
+  </script>
+
+</head>
+<body>
+<!-- Responsive navbar -->
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <!--  Display three horizontal lines when navbar collapsed. -->
+        <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/spring-2017/index.html"> CCIS2591 Spring 2017 </a>
+    </div>
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        
+        <li><a href="/spring-2017/modules/">Modules</a></li>
+        
+        <li><a href="/spring-2017/outcomes/">Outcomes</a></li>
+        
+        
+        <li><a href="/spring-2017/readings/">Readings</a></li>
+        
+        
+        <li><a href="/spring-2017/experiences/">Experiences</a></li>
+        
+        
+        <li><a href="/spring-2017/assessments/">Assessments</a></li>
+        
+        
+        <li><a href="/spring-2017/schedule/">Schedule</a></li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+<div class="breadcrumb-bar">
+  <div class="container">
+    <ol class="breadcrumb">
+      
+      <li><a href="/spring-2017/">Home</a></li>
+      <li><a href="/spring-2017/modules">Modules</a></li>
+      <li><a href="/spring-2017/modules/intro">Getting Started</a></li>
+      <li class="active">Getting Started</li>
+    </ol>
+  </div>
+</div>
+
+
+<div class="container">
+  <h1 id="tools">Tools</h1>
+<p>You’re learning to be a true IT professional, and to do this, you must learn to work with real tools:</p>
+
+<ul>
+  <li>the command line, terminal, or shell</li>
+  <li>a professional text editor</li>
+  <li>web browsers and their developer tools</li>
+  <li>file &amp; version management</li>
+  <li>JavaScript</li>
+</ul>
+
+<h3 id="the-shell">The shell</h3>
+<p>As a typical computer user, you interact with a graphical view of the system presented by your operating system.  However, underneath this is more direct and barebones interface to your operating system, the shell.  The shell allows us to navigate files, alter permissions, execute system tasks, and build and run the programs we will be developing. On a Windows computer this is PowerShell. On an Apple computer, it’s Terminal. Generically it is called the shell. The shell is the IT professional’s lifeblood; embrace it. The sooner you get comfortable with it, the easier your IT life will be.</p>
+
+<h3 id="professional-editor">Professional Editor</h3>
+<p>You’ll also need a text editor, something like MS Word for programming.  A professional editor includes tools that make writing code easier, things like syntax highlighting, autocomplete, and indenting blocks of text.  The editor recommended for this course is called <a href="https://brackets.io/">Brackets</a>, and it was made by the people at Adobe. It is a popular tool for web development due to its built in web server (NodeJS) which allows you to live preview your web pages.</p>
+
+<p>The core of Brackets is a basic text editor with some code smart features.  To make our lives easier, we will extend it with some add-ons specific to the work that we will be doing.  As you learn to work with Brackets, feel free to look for additional extensions to suit your own personal likes and needs.</p>
+
+<h3 id="web-browsers">Web Browsers</h3>
+<p><a href="https://www.google.com/chrome/browser/desktop/">Chrome</a> is the main browser that we will use for this course, and is required for the Live Preview feature in Brackets. However, in real world development, is a good practice to test your site in all major browsers - Chrome, Firefox, IE (Windows) and Safari (Mac). We will not focus extensively on specific cross-browser issues for this course and will standardize on the use of the Chrome browser.</p>
+
+<p>The Chrome Developer Tools also allows you to debug your JavaScript code running in the browser.  Learning to debug your code is a very useful and important skill.</p>
+
+<h3 id="file--version-management">File &amp; Version Management</h3>
+<p>Configuration files and code are important assets to an organization. Likewise the files you create as part of this course are important assets to you. We will be learning to manage these files professionally using a source code management tool called git which maintains versions of files inside of a repository and <a href="https://github.com/">GitHub</a> a free, public cloud hosting service for your git repositories.</p>
+
+<p>If you do not already have a <a href="https://github.com/">GitHub</a> account, please visit the website to register for a free public account now.  If you use your student email, you can later request a free Personal account upgrade through the GitHub <a href="https://education.github.com/pack">Student Developer Pack</a>.</p>
+
+<h3 id="javascript">JavaScript</h3>
+<p>JavaScript is a programming language mainly used for web development.  It can be used both for front-end (in the web browser) programming and back-end (server-side) programming.  For this course we will focus on the use of JavaScript as a front-end language.  Since we will run JavaScript in your web browser, no additional software is needed to run your applications, just the web browser.</p>
+
+<p>JavaScript is commonly confused with Java, but the two languages are very different. They have different syntax rules, different views on objects oriented programming, and are run in different ways.  Java is back-end language, though it can also be used to generate web pages (much like ASP .Net).</p>
+
+<p>JavaScript is commonly used for web applications in combination with both Java and .Net, but the skills needed for each of these three languages are different.</p>
+
+</div>
+
+
+
+
+<script src="/spring-2017/js/scrollIfAnchor.js"></script>
+
+<div class="footer-background hidden-print">
+  <footer>
+    <div class="container page-footer">
+      
+      <p>This course was developed for <a href="https://www.hennepintech.edu/">Hennepin Technical College</a> by <a href="https://www.linkedin.com/in/mary-mosman-43523976">Mary Mosman</a>.</p>
+
+<p>This work is licensed under the <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License" style="vertical-align: top;" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a></p>
+
+      
+      <p style="margin: 0">This website is developed using the <a href="http://morea-framework.github.io/">Morea Framework</a><br>
+        Last update on: <span>2017-01-12 03:11:14 -0600</span></p>
+    </div>
+  </footer>
+</div>
+</body>
+</html>

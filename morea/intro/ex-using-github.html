@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title> Git &amp; GitHub: Update the Student Directory | CCIS2591 Spring 2017 </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+
+  <!--  Load bootswatch-based Morea theme file. -->
+  <link rel="stylesheet" href="/spring-2017/css/themes/spacelab/bootstrap.min.css">
+  <link rel="stylesheet" href="/spring-2017/css/style.css">
+  <link rel="stylesheet" href="/spring-2017/css/syntax.css">
+  <link rel="shortcut icon" href="/spring-2017/favicon.ico" type="image/x-icon">
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.2/html5shiv.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.2.0/respond.js"></script>
+  <![endif]-->
+
+  <!-- Load Bootstrap JavaScript components -->
+  <script src="//code.jquery.com/jquery.min.js"></script>
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+  
+  <script>
+    (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+          }, i[r].l = 1 * new Date();
+      a = s.createElement(o),
+          m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-63189236-4', 'auto');
+    ga('send', 'pageview');
+
+  </script>
+  
+
+  <script>
+    $(window).load(function () {
+      // If on a page associated with a navbar item, make its navbar item 'active'.
+      $('.navbar-nav').find('a[href="' + location.pathname + '"]').parents('li').addClass('active');
+    });
+  </script>
+
+</head>
+<body>
+<!-- Responsive navbar -->
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <!--  Display three horizontal lines when navbar collapsed. -->
+        <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/spring-2017/index.html"> CCIS2591 Spring 2017 </a>
+    </div>
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        
+        <li><a href="/spring-2017/modules/">Modules</a></li>
+        
+        <li><a href="/spring-2017/outcomes/">Outcomes</a></li>
+        
+        
+        <li><a href="/spring-2017/readings/">Readings</a></li>
+        
+        
+        <li><a href="/spring-2017/experiences/">Experiences</a></li>
+        
+        
+        <li><a href="/spring-2017/assessments/">Assessments</a></li>
+        
+        
+        <li><a href="/spring-2017/schedule/">Schedule</a></li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+<div class="breadcrumb-bar">
+  <div class="container">
+    <ol class="breadcrumb">
+      
+      <li><a href="/spring-2017/">Home</a></li>
+      <li><a href="/spring-2017/modules">Modules</a></li>
+      <li><a href="/spring-2017/modules/intro">Getting Started</a></li>
+      <li class="active">Git &amp; GitHub: Update the Student Directory</li>
+    </ol>
+  </div>
+</div>
+
+
+<div class="container">
+  <h1 id="practice-using-git-and-github">Practice using Git and GitHub</h1>
+<p>If you do not already have a <a href="https://github.com/">GitHub</a> account, please visit the website to register for a free public account now.  If you use your student email, you can later request a free Personal account upgrade through the GitHub <a href="https://education.github.com/pack">Student Developer Pack</a>.</p>
+
+<h2 id="prerequisites">Prerequisites</h2>
+<p>The following topics were covered earlier:</p>
+
+<ul>
+  <li>
+<a href="/spring-2017/morea/intro/ex-install-git.html">Install Git</a>: To complete this exercise, you need to have git installed.</li>
+  <li>
+<a href="/spring-2017/morea/intro/ex-install-brackets.html">Install, Configure, and Use Brackets</a>: You should use Brackets to edit the files.</li>
+  <li>
+<a href="/spring-2017/morea/intro/read-shell-basics.html">Shell Basics</a>: I will assume that you know how to access the appropriate shell for your OS that is able to execute git commands.</li>
+</ul>
+
+<h2 id="github-assignment-workflow">GitHub Assignment Workflow</h2>
+
+<ol>
+  <li>Most assignments will begin with a starter repository that you will <em><strong>fork</strong></em>.  This gives you a general layout for the project and any starter code that you should have to begin.</li>
+  <li>You’ll then <em><strong>clone</strong></em> the repository to your computer, this gets you the files to edit.</li>
+  <li>Add or edit files to make changes and then <em><strong>add</strong></em> to the staged version.</li>
+  <li>Then you <em><strong>commit</strong></em> the version to your local repository.  It’s a good habit to commit code locally (on your computer) often.  This allows you to make specific notes on what you’ve done in the commit messages, and gives you a point to go back to if you want to undo something.</li>
+  <li>When you’re done with a chunk of work, or just need to save it <em>in the cloud</em> to go home for the night, you <em><strong>push</strong></em> your changes up to GitHub.</li>
+  <li>(Optional) To get those changes on another computer where the files have already been cloned, you <em><strong>pull</strong></em> them.</li>
+  <li>When you are done with the assignment and are ready to submit it for grading, you make a <em><strong>pull request</strong></em>.  This allows me to give you in-code feedback as I  grade.</li>
+</ol>
+
+<p>Let’s walk through this workflow on the student directory project.</p>
+
+<div class="alert alert-danger" role="alert">
+  <div class="media">
+    <div class="media-left media-top">
+      <img class="emoji" title=":exclamation:" alt=":exclamation:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/2757.png" height="20" width="20" align="absmiddle">
+    </div>
+    <div class="media-body">
+      <p>The video and images below walkthrough this process for the HTML organization.  The repository urls and organization name will vary for this course.  Please use the links provided in step 1 below to access the correct organization and repository.  Don’t try to type it in from the video or screenshots.</p>
+
+    </div>
+  </div>
+</div>
+
+<div style="padding:10px 0">
+  <div class="row">
+    <div class="col-xs-12 col-md-8">
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/ESzwfyVeqsg" frameborder="0" allowfullscreen=""></iframe>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+<h3 id="fork">Fork</h3>
+<p>First you’ll get your own copy of the repository, this called “forking”. A fork is your own personal copy of code.  You can modify it in any way you like, and it does not affect the person you copied it from.  However it does maintain a link, which we’ll discuss later.</p>
+
+<ol>
+  <li>
+    <p>Go to our <a href="https://github.com/htc-ccis2591/spring-2017">HTC CCIS2591 Spring 2017</a>.  You’ll notice there is a repository there called <a href="https://github.com/htc-ccis2591/spring-2017/js-students">js-students</a>.</p>
+  </li>
+  <li>
+    <p>Click the link to go to the repository page, then click the icon in the upper right corner to <em>fork</em> the repository to your account.<br>
+  <img class="img-responsive" src="/spring-2017/morea/intro/github-demo/github_fork.png" alt="GitHub page snippet showing the location of the fork button."></p>
+  </li>
+  <li>
+    <p>Now go to your GitHub page and you should see students under your repositories.  This is a copy of the repository from our class organization.  You can see the note that says it is forked.  That let’s you know that it is a copy.
+  <img class="img-responsive" src="/spring-2017/morea/intro/github-demo/github_forked_students.png" alt="GitHub page snippet showing forked repository on personal account."></p>
+  </li>
+  <li>
+    <p>This is <em>your</em> copy.  The changes you make here are only visible to you.  They are not made in the original class repository.</p>
+  </li>
+</ol>
+
+<h3 id="clone">Clone</h3>
+<p>Now you need to get the repository onto your computer so that you can work with it.  This is called “cloning”.</p>
+
+<div class="alert alert-danger" role="alert">
+When you clone a repository for class, it is important that you do it from your fork of that repository. Look for your user id before the repository name in the clone URL. If you clone the class repository you will not be able to push up your changes.
+</div>
+
+<ol>
+  <li>
+    <p>Click on the html-students link to go to the repository page.</p>
+  </li>
+  <li>
+    <p>Copy the URL from the repository page.<br>
+  <img class="img-responsive" src="/spring-2017/morea/intro/github-demo/github_clone_url.png" alt="GitHub page snippet showing the location of the clone url."></p>
+  </li>
+  <li>
+    <p>Next we leave the browser and go to the shell and go to the location where you want the repository to be pulled down. (Use the <code class="highlighter-rouge">cd</code> command to change your directory.)</p>
+  </li>
+  <li>
+    <p>Use the <code class="highlighter-rouge">git clone</code> command to get a local copy. <br><code class="highlighter-rouge">$ git clone &lt;paste-clone-url-here&gt;</code></p>
+  </li>
+  <li>
+    <p>Use the <code class="highlighter-rouge">ls</code> command to list the files/directories, and should now see a new html-students directory in that location.</p>
+  </li>
+  <li>
+    <p>When working with a git repository, you need to be inside the repository directory.  Use the <code class="highlighter-rouge">cd</code> (change directory) command to go into the html-students directory.</p>
+  </li>
+</ol>
+
+<h3 id="make-changes">Make Changes</h3>
+<p>Now that you have a personal copy of the student directory, you can make changes to the project files.  Use <a href="http://brackets.io/">Brackets</a> to add a new file as indicated below.</p>
+
+<ol>
+  <li>
+    <p>In the html-students directory.  You should see an _data directory with a subdirectory for the current semester.</p>
+  </li>
+  <li>
+    <p>Locate my <em>mbmosman.yml</em> file.  This is a<a href="http://www.yaml.org/start.html">YAML</a> file, a format based on key/value pairs separated by a colon (:).</p>
+  </li>
+  <li>
+    <p>Make a copy of the file and rename to <em>your</em> GitHub user name with the .yml extension.</p>
+  </li>
+  <li>
+    <p>Open the file in Brackets and update the contents to have your name, a custom emoji, and a short introduction.  Here’s a list of the <a href="http://www.emoji-cheat-sheet.com/">emoji</a> you can use.  Be careful with the formatting. Do not put colons around the emoji name.</p>
+  </li>
+  <li>
+    <p>In most cases, you’d now test to make sure things look OK.  While you could test this locally, there’s some extra set up needed for this type of Jekyll GitHub Pages site.  (Look it up later if you are curious.  This is how the course web site is built too.)  We’ll skip the testing locally and just commit our change, but you might need to come back later and fix it if you weren’t careful.</p>
+  </li>
+  <li>
+    <p>Go back to the shell and use the <code>git status</code> command to see what changes you have made.<br><code>$ git status</code></p>
+  </li>
+  <li>
+    <p>You should see that you’ve got an untracked file.  Use the <code>git add</code> command to add your file.  You can append the file name to the command to add a single file, or you can add a . to add all the new files at once.<br><code>$ git add &lt;your-file-name-here&gt;</code><br>OR<br><code>$ git add .</code></p>
+  </li>
+  <li>
+    <p>Use git status to verify that you’re file has been added.</p>
+  </li>
+  <li>
+    <p>Now it’s time to commit the change.  This will version your change in your local git repository.  Use the <code>git commit</code> command.<br><code>$ git commit -m "Your message about the change here."</code></p>
+  </li>
+  <li>
+    <p>It’s good to commit small groups of changes with specific messages.</p>
+  </li>
+</ol>
+
+<h3 id="push-changes">Push Changes</h3>
+<p>To get your changes from your local repository to the GitHub repository you do a push.</p>
+
+<ol>
+  <li>
+    <p>Before you push your changes, you should check that the branch you are on matches the remote branch you want to push to. It will often be master in the real world, but for our class assignments, which we want GitHub to host for us, it will be gh-pages.  You can see which branch you are working on by using the <code>git branch</code> command.</p>
+  </li>
+  <li>
+    <p>If your local and remote branches match, then you can just say <code class="highlighter-rouge">git push</code> and everything should go up to GitHub.</p>
+  </li>
+  <li>
+    <p>If your local and remote branches are different, then you need to say which remote branch you want to push to:<br><code class="highlighter-rouge">$ git push origin &lt;remote-branch-here&gt;</code></p>
+  </li>
+  <li>
+    <p>Check the GitHub repository page in the browser to make sure you got the changes up successfully.<br>
+  <img class="img-responsive" src="/spring-2017/morea/intro/github-demo/github_pushed_changes.jpg" alt="GitHub page snippet showing the time of the last update."></p>
+  </li>
+</ol>
+
+<h3 id="test">Test!</h3>
+<p>Before asking to merge your changes back into the class repository you should make sure you didn’t break anything.  In GitHub, if you click on the Settings tab for your html-students repository, you should see highlighted in green a URL where your page is published.
+<img class="img-responsive" src="/spring-2017/morea/intro/github-demo/github_test_changes.png" alt="GitHub Settings page snippet showing the location of the publish URL."></p>
+
+<p>When you click the URL, you should see the Student Directory page click the link for your semester and you should see both my information and yours.<br>
+<img class="img-responsive" src="/spring-2017/morea/intro/github-demo/github_test_page.png" alt="Student Directory page snippet."></p>
+
+<p>If the page is not coming up, double check the syntax and naming of your .yml file.  If you are not seeing your picture or icon, then your file name is not the same as your GitHub user id.</p>
+
+<h3 id="pull-request">Pull Request</h3>
+<p>Once you have working changes on your repository &amp; web page, you want to submit a pull request for the source repository (our course organization) to merge those changes.  This is the last - but most important - step, the one that turns in your assignment.</p>
+
+<ol>
+  <li>
+    <p>From your repository page, click the Pull Request button.<br>
+  <img class="img-responsive" src="/spring-2017/morea/intro/github-demo/github_pullreq_tab.png" alt="GitHub page snippet showing the pull request button."></p>
+  </li>
+  <li>
+    <p>The next screen will show you all the changes between your copy of the repository and the original.  Review the changes, then click the green button to create the request.</p>
+  </li>
+  <li>
+    <p>The next page allows you to enter a commit message and (optionally) comments for the reviewer. Click the green button again to open the request.</p>
+  </li>
+  <li>
+    <p>Make sure to verify that you see the green button that says your pull-request is open, and do not close it.  I will not see or grade requests that are closed.</p>
+  </li>
+</ol>
+
+<h2 id="submit-work-for-grading">Submit Work for Grading</h2>
+<p>There are 3 things to submit into the dropbox for this.
+Your pull-request on GitHub is one part of your submission for this assignment.  In addition to creating the pull request, you also want to submit the following items into the Module 1 Assignments box on D2L.</p>
+
+<ol>
+  <li>GitHub Student Directory live web page screenshot
+    <div style="padding:10px 20px">
+   <div class="row"><div class="col-sm-6">
+     Sample Screenshot:
+     <img class="img-responsive" src="/spring-2017/morea/intro/github-demo/pull-req-screenshot-sample.png" alt="A sample screenshot of the pull-request">
+   </div></div>
+ </div>
+  </li>
+  <li>GitHub Student Directory pull request screenshot
+    <div style="padding:10px 20px">
+   <div class="row"><div class="col-sm-6">
+       Sample Screenshot:
+       <img class="img-responsive" src="/spring-2017/morea/intro/github-demo/page-test-screenshot-sample.png" alt="A sample screenshot of the web page">
+   </div></div>
+ </div>
+  </li>
+</ol>
+
+<p>You can take a screenshot on most windows computers by looking for the PrtSc or PrtScn button on your keyboard.  That will screenshot the entire desktop.  If you use Alt + PrtScn that will screenshot the active window.  This puts the screenshot in the clipboard.  You will need to paste this into a MS Word document to save and submit it.</p>
+
+<p>On Mac, you can take a screenshot by using the command+shift+4 key combination.  This will allow you to select the area on the screen to screenshot.  If you hit the space key, it will change to highlight the active window for the screenshot.  Click the mouse to take the screenshot and it should save to your desktop.</p>
+
+</div>
+
+
+
+
+<script src="/spring-2017/js/scrollIfAnchor.js"></script>
+
+<div class="footer-background hidden-print">
+  <footer>
+    <div class="container page-footer">
+      
+      <p>This course was developed for <a href="https://www.hennepintech.edu/">Hennepin Technical College</a> by <a href="https://www.linkedin.com/in/mary-mosman-43523976">Mary Mosman</a>.</p>
+
+<p>This work is licensed under the <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License" style="vertical-align: top;" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png"></a></p>
+
+      
+      <p style="margin: 0">This website is developed using the <a href="http://morea-framework.github.io/">Morea Framework</a><br>
+        Last update on: <span>2017-01-12 03:11:14 -0600</span></p>
+    </div>
+  </footer>
+</div>
+</body>
+</html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title> Schedule | CCIS2591 Spring 2017 </title>
+  <title> Install, Configure, and Use Brackets | CCIS2591 Spring 2017 </title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="utf-8">
 
@@ -90,51 +90,59 @@
 </div>
 
 
-
 <div class="breadcrumb-bar">
   <div class="container">
     <ol class="breadcrumb">
       
       <li><a href="/spring-2017/">Home</a></li>
-      <li class="active">Schedule</li>
+      <li><a href="/spring-2017/modules">Modules</a></li>
+      <li><a href="/spring-2017/modules/intro">Getting Started</a></li>
+      <li class="active">Install, Configure, and Use Brackets</li>
     </ol>
   </div>
 </div>
 
-<!-- Load FullCalendar for schedule page. -->
-<!-- Documentation available at: http://fullcalendar.io/ -->
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.3.1/fullcalendar.css">
-<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.3/moment.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.3.1/fullcalendar.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.3.1/gcal.js"></script>
 
-
-<div style="margin-bottom: 10px" class="container">
-  <h1>Schedule</h1>
-
-  <div id='calendar'></div>
+<div class="container">
+  <h1 id="install-configure-and-use-brackets">Install Configure, and Use Brackets</h1>
+<p>Let’s walk through how to install, configure and use Brackets.</p>
+<div style="padding:10px 0">
+  <div class="row">
+    <div class="col-xs-12 col-md-8">
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/_MXzMRgPnvs" frameborder="0" allowfullscreen=""></iframe>
+      </div>
+      
+    </div>
+  </div>
 </div>
-<script>
-  $(document).ready(function() {
-    $('#calendar').fullCalendar({
-        googleCalendarApiKey: 'AIzaSyBp2EuIzOmDJHiLpU3jWamZ_u5D_ZFw2KI',
-        eventColor: '#446e9b',
-        eventSources: [
-            {
-                // My HTC Events Calendar
-                googleCalendarId: 'pam2qc7v8m3eqordq9llu4b844@group.calendar.google.com',
-                color: '#f26522',  // HTC Orange for college dates & events
-                textColor: 'black'
-            },
-            {
-                // Course Specific Calendar
-                googleCalendarId: '8ta90ll5ku4okc52ag8o1t0e9g@group.calendar.google.com'
-            }
-        ]
-    });
-});
-</script>
 
+<h2 id="install">Install</h2>
+<p>If you have not already done so, download Brackets from the <a href="http://brackets.io/">Brackets.io</a> website.  Once you have completed the download, run the installer.</p>
+
+<p>Brackets Live Preview relies on the <a href="https://www.google.com/chrome/browser/desktop/">Chrome</a> browser.  If you do not already have this installed, download and install it from the web. If you do, check that you have the latest version and update if you do not.</p>
+
+<h2 id="configure">Configure</h2>
+<p>After the install has completed, run Brackets and use the extension manager to install the following extensions:</p>
+
+<ul>
+  <li>Beautify (by Drew Hamlett)</li>
+  <li>HTMLHint (by Raymond Camden)</li>
+  <li>CSSLint (by Raymond Camden)</li>
+  <li>Pop-up Menu Brackets (by Denisov21) <em><strong>optional</strong></em></li>
+</ul>
+
+<h2 id="tips-for-use">Tips for Use</h2>
+
+<h3 id="always-open-a-folder">Always Open a Folder</h3>
+<p>When working with Brackets for web development, it is very important that you open and work with a folder of files.  Because there is an actual web server behind the editor, it expects that you have a root folder for your website.  If this root folder has not been opened, you can see errors when using auto-complete and live-preview.</p>
+
+<p>Even if you only have a single file, create a folder for that web site.  In addition to preventing errors in Brackets, this facilitates growth of the web site later on.</p>
+
+<h3 id="use-live-preview">Use Live Preview</h3>
+<p>The Live Preview feature is an excellent tool for learning.  If you watch the changes to your website as you edit your files, it can help solidify your understanding of how HTML and CSS work together.  Live preview relies on the Chrome Browser being installed.</p>
+
+</div>
 
 
 

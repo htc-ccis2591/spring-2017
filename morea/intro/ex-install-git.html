@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title> Schedule | CCIS2591 Spring 2017 </title>
+  <title> Install Git | CCIS2591 Spring 2017 </title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="utf-8">
 
@@ -90,51 +90,62 @@
 </div>
 
 
-
 <div class="breadcrumb-bar">
   <div class="container">
     <ol class="breadcrumb">
       
       <li><a href="/spring-2017/">Home</a></li>
-      <li class="active">Schedule</li>
+      <li><a href="/spring-2017/modules">Modules</a></li>
+      <li><a href="/spring-2017/modules/intro">Getting Started</a></li>
+      <li class="active">Install Git</li>
     </ol>
   </div>
 </div>
 
-<!-- Load FullCalendar for schedule page. -->
-<!-- Documentation available at: http://fullcalendar.io/ -->
-<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.3.1/fullcalendar.css">
-<script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.3/moment.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.3.1/fullcalendar.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.3.1/gcal.js"></script>
 
+<div class="container">
+  <h1 id="install-git">Install Git</h1>
+<p>The install process for git is different based on the type of computer you are using.  Install information is provided here for Windows &amp; Mac OS.  If you are using Linux, it is likely that you already have git and if not can use the package manager to easily install it.</p>
 
-<div style="margin-bottom: 10px" class="container">
-  <h1>Schedule</h1>
+<h2 id="windows-users">Windows Users</h2>
+<p>If you are a Windows user, typically you will use PowerShell as your command shell.  However, Windows PowerShell does not include git by default.  You will need to download and install git from the web. You can get it from the <a href="https://git-scm.com/download/win">Git-SCM Downloads</a>.</p>
 
-  <div id='calendar'></div>
+<p>I recommend that you keep the default install settings suggested by the installer, specifically:</p>
+<div class="row">
+<div class="col-md-6">
+<img class="img-responsive" src="/spring-2017/morea/intro/images/git-install-opt1.png" alt="Screenshot of install options" />
+</div><div class="col-md-6">
+<img class="img-responsive" src="/spring-2017/morea/intro/images/git-install-opt2.png" alt="Screenshot of install options" />
 </div>
-<script>
-  $(document).ready(function() {
-    $('#calendar').fullCalendar({
-        googleCalendarApiKey: 'AIzaSyBp2EuIzOmDJHiLpU3jWamZ_u5D_ZFw2KI',
-        eventColor: '#446e9b',
-        eventSources: [
-            {
-                // My HTC Events Calendar
-                googleCalendarId: 'pam2qc7v8m3eqordq9llu4b844@group.calendar.google.com',
-                color: '#f26522',  // HTC Orange for college dates & events
-                textColor: 'black'
-            },
-            {
-                // Course Specific Calendar
-                googleCalendarId: '8ta90ll5ku4okc52ag8o1t0e9g@group.calendar.google.com'
-            }
-        ]
-    });
-});
-</script>
+</div>
 
+<p><br />
+This will install a few different options that allow you to work with Git on a Windows computer.  You may choose any of them you like, but I would recommend GitBash as it will be closest to what you may see from my examples.</p>
+
+<h2 id="mac-users">Mac Users</h2>
+<p>If you are using a Mac, open up a <a href="http://blog.teamtreehouse.com/introduction-to-the-mac-os-x-command-line">Terminal</a> window and type git.  You may find that it is already installed, or if not that it will prompt you to install the XCode Command Line Developer Tools.  If it does not, you likely have an older version of the Mac OS and should download and install the tools from the <a href="https://developer.apple.com/downloads/index.action">Apple Developer Site</a>.  You can also install the full XCode suite from the Apple App Store, but this will take additional space.</p>
+
+<p>GitHub Desktop is not required, we only need the underlying git command, and actually I encourage you not to use the application itself, but there is also now a <a href="https://desktop.github.com/">GitHub Desktop for Mac</a></p>
+
+<h2 id="configure-git">Configure Git</h2>
+<p>Before you dive in, you’ll want to configure git with your user information. In the commands below, fill in your GitHub name and the email used with your GitHub account.  The email address is what will tie your activity to your account.  <strong>Make sure that you are using the same email and check for typos.</strong></p>
+
+<h3 id="config-for-public-shared-computer">Config for Public (Shared) Computer</h3>
+<p>Use this only for a computer which is public or shared.  This configuration is applied only to the current git repository directory.  It must be repeated for each repository you clone or create.</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>git config user.name <span class="s2">"User Name"</span>
+<span class="gp">$ </span>git config user.email <span class="s2">"user@email"</span></code></pre></figure>
+
+<p>I also recommend saving this git config customized with your information as a Gist on GitHub so that it is easily available for you to use on any computer.</p>
+
+<h3 id="config-for-personal-home-computer">Config for Personal (Home) Computer</h3>
+<p>Use this only for a computer where you are the only GitHub user.</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="gp">$ </span>git config --global user.name <span class="s2">"User Name"</span>
+<span class="gp">$ </span>git config --global user.email <span class="s2">"user@email"</span></code></pre></figure>
+
+
+</div>
 
 
 
