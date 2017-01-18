@@ -10,7 +10,8 @@ morea_readings:
  - read-getting-started
  - read-shell-basics
  - read-github-basics
- - read-js-intro
+ - read-hello-world
+ - read-js-tools
 morea_experiences:
  - install-brackets
  - install-git
