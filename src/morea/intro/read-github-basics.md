@@ -39,7 +39,6 @@ Get yourself setup with a GitHub account.  I recommend that you add your name to
 </div>
 </div>
 
-Once you are registered, make sure to get me your GitHub user name so I can add you to our GitHub organization.  This will get you access to any non-public material I post for the duration of the course.
 
 ## Workflow
 Most assignments will begin with a starter repository that you will *fork*.  This gives you a personal copy of the repository and its files.  This repository will usually contain the general layout for the project and any starter code that you should have to begin.  However this personal copy initially exists only on GitHub.  You'll need to *clone* the repository to your computer, so that you can make changes to the files.
