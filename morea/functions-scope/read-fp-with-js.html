@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title> Functional Programming in JavaScript | CCIS2591 Spring 2017 </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+
+  <!--  Load bootswatch-based Morea theme file. -->
+  <link rel="stylesheet" href="/spring-2017/css/themes/spacelab/bootstrap.min.css">
+  <link rel="stylesheet" href="/spring-2017/css/style.css">
+  <link rel="stylesheet" href="/spring-2017/css/syntax.css">
+  <link rel="shortcut icon" href="/spring-2017/favicon.ico" type="image/x-icon">
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.2/html5shiv.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.2.0/respond.js"></script>
+  <![endif]-->
+
+  <!-- Load Bootstrap JavaScript components -->
+  <script src="//code.jquery.com/jquery.min.js"></script>
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+  
+  <script>
+    (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+          }, i[r].l = 1 * new Date();
+      a = s.createElement(o),
+          m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-63189236-4', 'auto');
+    ga('send', 'pageview');
+
+  </script>
+  
+
+  <script>
+    $(window).load(function () {
+      // If on a page associated with a navbar item, make its navbar item 'active'.
+      $('.navbar-nav').find('a[href="' + location.pathname + '"]').parents('li').addClass('active');
+    });
+  </script>
+
+</head>
+<body>
+<!-- Responsive navbar -->
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <!--  Display three horizontal lines when navbar collapsed. -->
+        <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/spring-2017/index.html"> CCIS2591 Spring 2017 </a>
+    </div>
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        
+        <li><a href="/spring-2017/modules/">Modules</a></li>
+        
+        <li><a href="/spring-2017/outcomes/">Outcomes</a></li>
+        
+        
+        <li><a href="/spring-2017/readings/">Readings</a></li>
+        
+        
+        <li><a href="/spring-2017/experiences/">Experiences</a></li>
+        
+        
+        <li><a href="/spring-2017/assessments/">Assessments</a></li>
+        
+        
+        <li><a href="/spring-2017/schedule/">Schedule</a></li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+<div class="breadcrumb-bar">
+  <div class="container">
+    <ol class="breadcrumb">
+      
+      <li><a href="/spring-2017/">Home</a></li>
+      <li><a href="/spring-2017/modules">Modules</a></li>
+      <li><a href="/spring-2017/modules/functions-scope">Functions &amp; Scope</a></li>
+      <li class="active">Functional Programming in JavaScript</li>
+    </ol>
+  </div>
+</div>
+
+
+<div class="container">
+  <h1 id="functional-programming-in-javascript">Functional Programming in JavaScript</h1>
+<p>A discussion of functional programming in JavaScript.</p>
+
+<h2 id="what-is-functional-programming">What is Functional Programming?</h2>
+<p>Functional programming is the process of building software using pure functions and avoiding:</p>
+
+<ul>
+  <li>shared state</li>
+  <li>mutable data</li>
+  <li>side-effects</li>
+</ul>
+
+<p>This is a stark contrast to object oriented programming where state is frequently shared and modified by public methods.</p>
+
+<p>Why is this a big thing?  It makes code more predictable and easier to test. This is becoming increasingly popular in the JavaScript world in particular.</p>
+
+<h2 id="pure-functions">Pure functions</h2>
+<p>I will <em>generally</em> expect you to write <strong>pure functions</strong> for this course. With a pure function, you can effectively replace a call to the function with its resulting value. (If you want to sound smart, this is called referential transparency.)</p>
+
+<p>To write pure functions, you want to avoid shared state and side-effects. When the function is called with the same input, it must always returns the same output value.</p>
+
+<h2 id="side-effects">Side-effects</h2>
+<p>It’s a good practice to write methods that do not have side-effects.  This means that they don’t indirectly change anything visible outside the scope of the function itself.  Side-effects often occur through shared state (see below).</p>
+
+<p>Other side-effects include:</p>
+<ul>
+  <li>Logging to the console</li>
+  <li>Writing to the screen</li>
+  <li>Writing to a file</li>
+  <li>Writing to the network</li>
+  <li>Triggering any external process</li>
+</ul>
+
+<h2 id="shared-state">Shared State</h2>
+<p>Shared state is any data that exists in a shared scope such as a global scope or properties in an object.</p>
+
+<p>For example, a common program in my introductory programming class is to build a simple hangman game.  In this game, a secret word is chosen by the computer and the player tries to guess the word letter by letter.  This game needs to be aware of things like what the secret word is, the player’s name, the letters the player has guessed, etc.  All of those values define the application’s state.</p>
+
+<p>Often what will happen is that that application state is defined in shared global variables that are modified by various functions as the program runs. This state is shared across all of the program code, and functions may internally change that state when they are called (side-effects). This is generally considered <em>BAD</em> programming practice, and is particularly problematic for web and distributed environments.</p>
+
+<h2 id="immutable-objects">Immutable Objects</h2>
+<p>An immutable object is one that cannot be modified after creation. It’s state (values of it’s properties) is fixed.  Using immutable objects makes your code more predictable.  Instead of changing the objects properties a new object is created with the desired state.</p>
+
+<div class="alert alert-info" role="alert">
+  <div class="media">
+    <div class="media-left media-top">
+      <img class="emoji" title=":notebook:" alt=":notebook:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f4d3.png" height="20" width="20" align="absmiddle">
+    </div>
+    <div class="media-body">
+      <p>Note that when a constant refers to an object, that only means that the constant cannot be reassigned to a new object.  It does not mean the properties of that object itself may not change.</p>
+
+    </div>
+  </div>
+</div>
+
+<h2 id="more-information">More information</h2>
+<p>We’re just skimming the surface of these topics here, and we’ll expand on them throughout the course. While functional programming is not the main goal or objective of this course it is a very relevant topic for JavaScript programmers.</p>
+
+<p>If you want to dive a little deeper, check out the following blog posts from Eric Elliot:</p>
+<ul>
+  <li><a href="https://medium.com/javascript-scene/master-the-javascript-interview-what-is-a-pure-function-d1c076bec976#.mh9l1qwgn">Master the JavaScript Interview: What is a pure function?</a></li>
+  <li><a href="https://medium.com/javascript-scene/master-the-javascript-interview-what-is-functional-programming-7f218c68b3a0#.wqpw2re0c">Master the JavaScript Interview: What is functional programming?</a></li>
+</ul>
+
+</div>
+
+
+
+
+<script src="/spring-2017/js/scrollIfAnchor.js"></script>
+
+<div class="footer-background hidden-print">
+  <footer>
+    <div class="container page-footer">
+      
+      <p>This course was developed for <a href="https://www.hennepintech.edu/">Hennepin Technical College</a> by <a href="https://www.linkedin.com/in/mary-mosman-43523976">Mary Mosman</a>.</p>
+
+<p>This work is licensed under the <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License" style="vertical-align: top;" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png"></a></p>
+
+      
+      <p style="margin: 0">This website is developed using the <a href="http://morea-framework.github.io/">Morea Framework</a><br>
+        Last update on: <span>2017-01-25 17:53:00 -0600</span></p>
+    </div>
+  </footer>
+</div>
+</body>
+</html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title> Variables and Types | CCIS2591 Spring 2017 </title>
+  <title> Functions | CCIS2591 Spring 2017 </title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="utf-8">
 
@@ -96,16 +96,34 @@
       
       <li><a href="/spring-2017/">Home</a></li>
       <li><a href="/spring-2017/modules">Modules</a></li>
-      <li><a href="/spring-2017/modules/hello-js">Hello JavaScript</a></li>
-      <li class="active">Variables and Types</li>
+      <li><a href="/spring-2017/modules/functions-scope">Functions & Scope</a></li>
+      <li class="active">Functions</li>
     </ol>
   </div>
 </div>
 
 
 <div class="container">
-  <h1 id="variables-and-types">Variables and Types</h1>
-<p>Read Chapter 3 from your textbook <em>Learning JavaScript</em> (<a href="http://www.oreilly.com/catalog/errata.csp?isbn=0636920035534">errata</a>). Chapter 3 covers an introduction to JavaScript types and how to use constants and variables.</p>
+  <h1 id="functions">Functions</h1>
+<p>Read Chapter 6 from your textbook <em>Learning JavaScript</em> (<a href="http://www.oreilly.com/catalog/errata.csp?isbn=0636920035534">errata</a>). Chapter 6 covers functions in JavaScript in quite a bit of detail.</p>
+
+<h2 id="important-things-to-note">Important Things to Note</h2>
+<p>I expect you to be familiar with the idea of functions, arguments (input parameters), and return values already, but there are several unexpected things about functions in JavaScript you need to pick up on in this chapter.</p>
+
+<ol>
+  <li>Functions in JavaScript are objects.  You can pass them around by reference (by name).  Make the distinction between calling a function and referencing a function is clear.  See “Calling Versus Referencing” on page 102-103.</li>
+  <li>There is no <em>signature</em> to a function in JavaScript. In some languages, the number and type of the function arguments are part of the function’s definition.  This is not true with JavaScript.  See “Do Arguments Make the Function?” on page 105-106.</li>
+  <li>When a function is <em>in</em> an object, it’s now called a <strong>method</strong>.</li>
+  <li>The <code class="highlighter-rouge">this</code> keyword is not <em>always</em> object-oriented in JavaScript. Sometimes the value of <code class="highlighter-rouge">this</code> is determined by context when a function is not called directly on an object instance.  Understanding how that works is complex and I approve of the book not discussing it because you shouldn’t do it.  However understanding that it is not strictly object-oriented can help understand why unexpected things in JavaScript might happen. See “The <code class="highlighter-rouge">this</code> Keyword” on pages 108-109.</li>
+</ol>
+
+<h2 id="less-important-things">Less important things</h2>
+
+<ol>
+  <li>Destructuring arguments</li>
+  <li>Arrow functions, which are new in ES6.  These can be handy and will be used later, but for now knowing they exist is good enough.</li>
+  <li>Call, apply, and bind.  Good to know as well, but you can go a long way without need for these.</li>
+</ol>
 
 </div>
 

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title> Practice JavaScript Functions | CCIS2591 Spring 2017 </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+
+  <!--  Load bootswatch-based Morea theme file. -->
+  <link rel="stylesheet" href="/spring-2017/css/themes/spacelab/bootstrap.min.css">
+  <link rel="stylesheet" href="/spring-2017/css/style.css">
+  <link rel="stylesheet" href="/spring-2017/css/syntax.css">
+  <link rel="shortcut icon" href="/spring-2017/favicon.ico" type="image/x-icon">
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.6.2/html5shiv.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.2.0/respond.js"></script>
+  <![endif]-->
+
+  <!-- Load Bootstrap JavaScript components -->
+  <script src="//code.jquery.com/jquery.min.js"></script>
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+
+  
+  <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+  
+  <script>
+    (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+          }, i[r].l = 1 * new Date();
+      a = s.createElement(o),
+          m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-63189236-4', 'auto');
+    ga('send', 'pageview');
+
+  </script>
+  
+
+  <script>
+    $(window).load(function () {
+      // If on a page associated with a navbar item, make its navbar item 'active'.
+      $('.navbar-nav').find('a[href="' + location.pathname + '"]').parents('li').addClass('active');
+    });
+  </script>
+
+</head>
+<body>
+<!-- Responsive navbar -->
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <!--  Display three horizontal lines when navbar collapsed. -->
+        <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="/spring-2017/index.html"> CCIS2591 Spring 2017 </a>
+    </div>
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        
+        <li><a href="/spring-2017/modules/">Modules</a></li>
+        
+        <li><a href="/spring-2017/outcomes/">Outcomes</a></li>
+        
+        
+        <li><a href="/spring-2017/readings/">Readings</a></li>
+        
+        
+        <li><a href="/spring-2017/experiences/">Experiences</a></li>
+        
+        
+        <li><a href="/spring-2017/assessments/">Assessments</a></li>
+        
+        
+        <li><a href="/spring-2017/schedule/">Schedule</a></li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+<div class="breadcrumb-bar">
+  <div class="container">
+    <ol class="breadcrumb">
+      
+      <li><a href="/spring-2017/">Home</a></li>
+      <li><a href="/spring-2017/modules">Modules</a></li>
+      <li><a href="/spring-2017/modules/functions-scope">Functions &amp; Scope</a></li>
+      <li class="active">Practice JavaScript Functions</li>
+    </ol>
+  </div>
+</div>
+
+
+<div class="container">
+  <h1 id="basic-javascript">Basic Javascript</h1>
+
+<h2 id="goals">Goals</h2>
+<ul>
+  <li>Make functions in JavaScript that take input parameters</li>
+  <li>Call functions and use return values</li>
+  <li>Use JavaScript to get a value from a form field</li>
+  <li>Use JavaScript to set a value from a form field</li>
+  <li>Use String properties and methods</li>
+</ul>
+
+<h2 id="reading">Reading</h2>
+<p>Before beginning this assignment, you should read through chapters 6 and 7 in the textbook to learn basic Javascript syntax for function and gain an understanding of program scope.</p>
+
+<h2 id="github-info">GitHub Info</h2>
+<p>Repository:  <a href="https://github.com/htc-ccis2591-spring2017/simple-functions">https://github.com/htc-ccis2591-spring2017/simple-functions</a></p>
+
+<p>You need to fork this repository and submit a pull request to turn in the assignment.  Please post a screenshot of the pull request to the D2L dropbox.  The dropbox is mainly used to communicate due dates, not for storing the completed work.  You do not need to upload the project to D2L, only to GitHub.</p>
+
+<h2 id="provided-files">Provided Files</h2>
+<p>Open the project (the basic-javascript folder) in Brackets. When using Brackets, it is important to open the entire folder, not just a single file.</p>
+
+<p>Look at the index.html and script.js files provided.</p>
+
+<h3 id="open-and-run">Open and Run</h3>
+<p>Use the Brackets Live Preview feature to view the web page.  The page will show a series of forms that allow you to do some nifty things.  Click on one of the buttons.  Initially clicking the buttons will not appear to do anything.  Open the Developer Tools and go to the JavaScript Console and you will see some errors.</p>
+
+<div class="alert alert-warning" role="alert">
+  <div class="media">
+    <div class="media-left media-top">
+      <img class="emoji" title=":warning:" alt=":warning:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/26a0.png" height="20" width="20" align="absmiddle">
+    </div>
+    <div class="media-body">
+      <p>When a JavaScript syntax error is found, the browser will stop running the file. This is important to remember!</p>
+
+    </div>
+  </div>
+</div>
+
+<h3 id="javascript-for-the-form">JavaScript for the Form</h3>
+<p>Open the js/script.js file.  To complete the assignment, you will need to add JavaScript code as indicated in the comments. Before you begin, scroll down and look at the provided code that indicates it should not be modified.</p>
+
+<p>This code is setup to handle working with the HTML form for you.  We haven’t discussed most of what this code is doing, so examples are provided to get a nice functional form as well as for you to learn from.</p>
+
+<h4 id="form-field-values">Form Field values</h4>
+<p>We are getting the data to pass into our functions from the forms on the HTML page.  To get a form field value, we are using the id attribute of the form field to get that element from the DOM.  Then we get it’s value property.</p>
+
+<p>For example:</p>
+<pre><code class="language-JavaScript">   var earthWeight = document.getElementById("weight").value;
+</code></pre>
+
+<p>We can use similar syntax to set a value:</p>
+<pre><code class="language-JavaScript">   document.getElementById("moon-weight").value = "";
+</code></pre>
+
+<h4 id="event-listeners">Event Listeners</h4>
+<p>We will discuss event listeners later in the course, but you’ll see them in action here. In this assignment, they are used to do something when an event happens. Two events are used in this code.</p>
+
+<ol>
+  <li>
+    <p>The focus event occurs when you click into an input field.  When that event occurs, the output field (and in some case other input fields) value is cleared out by setting it to the empty string.</p>
+  </li>
+  <li>
+    <p>The click event is used to say what happens when a button is clicked. Don’t worry too much about the event handler right now, but pay attention to the code inside the function.  This will get the form input field value(s) and call the function you write to get the output. It then updates the form output field.</p>
+  </li>
+</ol>
+
+<h2 id="assignment">Assignment</h2>
+<p>The main focus of your assignment is to write the 4 functions that are used by the button click handlers:</p>
+
+<ol>
+  <li>Moon Weight</li>
+  <li>Dog Human Age</li>
+  <li>A Mini Calculator</li>
+  <li>String Length</li>
+</ol>
+
+<p>The comments at the top of the JavaScript file provide information on how to write the functions.  Most of these are very basic, so don’t over think it.  The Mini Calculator is a bit more involved, but still pretty straightforward.</p>
+
+<p>Problem 4 also asks you to fill in the setup code.  Use the examples provided for problems 1-3 and setup problem 4 following the same pattern. This is intended to have you think about what that code is doing.</p>
+
+<h2 id="live-testing">Live Testing</h2>
+<p>When you are done, push your files to GitHub, then make sure that your page displays and runs correctly on the GitHub website.</p>
+
+<ol>
+  <li>Go to your repository settings, and locate the URL where the page is published.  Copy this URL and use it as the website part of the repository description.</li>
+  <li>Click the link to view the page and make sure that it runs correctly.</li>
+</ol>
+
+<h3 id="assignment-submission">Assignment Submission</h3>
+<p>After you have verified the page is working, create the pull request to submit the assignment.</p>
+
+<p>You will also need to put two screenshots in the dropbox.</p>
+
+<ol>
+  <li>Screenshot of your open pull-request.</li>
+  <li>Screenshot should be the output from the JavaScript console when the assignment is completed.</li>
+</ol>
+
+</div>
+
+
+
+
+<script src="/spring-2017/js/scrollIfAnchor.js"></script>
+
+<div class="footer-background hidden-print">
+  <footer>
+    <div class="container page-footer">
+      
+      <p>This course was developed for <a href="https://www.hennepintech.edu/">Hennepin Technical College</a> by <a href="https://www.linkedin.com/in/mary-mosman-43523976">Mary Mosman</a>.</p>
+
+<p>This work is licensed under the <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License" style="vertical-align: top;" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png"></a></p>
+
+      
+      <p style="margin: 0">This website is developed using the <a href="http://morea-framework.github.io/">Morea Framework</a><br>
+        Last update on: <span>2017-01-25 17:53:00 -0600</span></p>
+    </div>
+  </footer>
+</div>
+</body>
+</html>
