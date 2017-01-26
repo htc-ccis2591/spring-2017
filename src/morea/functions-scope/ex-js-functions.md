@@ -72,6 +72,8 @@ The main focus of your assignment is to write the 4 functions that are used by t
 
 The comments at the top of the JavaScript file provide information on how to write the functions.  Most of these are very basic, so don't over think it.  The Mini Calculator is a bit more involved, but still pretty straightforward.
 
+You should also update the provided ES5 code to be more ES6.  (Apply what you learned about the differences in variable declaration and scoping.)
+
 Problem 4 also asks you to fill in the setup code.  Use the examples provided for problems 1-3 and setup problem 4 following the same pattern. This is intended to have you think about what that code is doing.
 
 
