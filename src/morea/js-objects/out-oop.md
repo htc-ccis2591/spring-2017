@@ -6,4 +6,8 @@ morea_type: outcome
 morea_sort_order: 1
 ---
 
-Explain the differences between the functional/procedural and object-oriented programming paradigms.
+Explain the following key concepts of object-oriented programming:
+
+- objects, classes, and instances
+- inheritance
+- polymorphism
